@@ -31,6 +31,40 @@ async function getSongs(folder) {
             songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
+
+    
+    //  currFolder = folder; // Ensure variable declaration with let
+    // let songs = []; // Initialize songs array
+
+    // try {
+    //     let a = await fetch(`/${folder}/`)
+    //     let response = await a.text();
+        
+    //     if (!response.ok) {
+    //         throw new Error('Network response was not ok');
+    //     }
+    //     let text = await response.text();
+        
+    //     let div = document.createElement("div");
+    //     div.innerHTML = text;
+        
+    //     let as = div.getElementsByTagName("a");
+        
+    //     for (let index = 0; index < as.length; index++) {
+    //         const element = as[index];
+    //         if (element.href.endsWith(".mp3")) {
+    //             songs.push(element.href.split(`/${folder}/`)[1]);
+    //         }
+    //     }
+        
+    // } 
+    // catch (error) {
+    //     console.error('Error fetching songs:', error);
+    //     return []; // Return an empty array in case of error
+    // }
+
+
+    
  
     // songs.sort((a, b) => a.size - b.size);
 
@@ -117,8 +151,8 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of all the songs
-    await getSongs("songs")
-    // playMusic(songs[0], true)
+    await getSongs("songs/ncs")
+    playMusic(songs[0], true)
 
     // Display all the albums on the page
     await displayAlbums()
